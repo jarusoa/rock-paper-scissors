@@ -63,9 +63,9 @@ rockButton.textContent = "Rock!";
 paperButton.textContent = "Paper!";
 scissorButton.textContent = "Scissor!";
 
-rockButton.addEventListener("click", playRound("rock", getComputerChoice()));
-paperButton.addEventListener("click", playRound("paper", getComputerChoice()));
-scissorButton.addEventListener("click", playRound("scissors", getComputerChoice()));
+rockButton.addEventListener("click", function() { playRound("rock", getComputerChoice())});
+paperButton.addEventListener("click", function() { playRound("paper", getComputerChoice())});
+scissorButton.addEventListener("click", function() { playRound("scissor", getComputerChoice())});
 
 
 
