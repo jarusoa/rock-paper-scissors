@@ -11,10 +11,6 @@ function getComputerChoice(){
     }
 }
 
-function getHumanChoice(){
-    humanChoice = prompt("Rock, Paper, or Scissors?");
-    return humanChoice;
-}
 
 
 function playRound(humanChoice, computerChoice) {
@@ -58,28 +54,32 @@ function playRound(humanChoice, computerChoice) {
         }
     }
 }
-  
-function playGame(){
 
-    for(let i = 0; i < 5; i++){
-        var humanChoice = getHumanChoice();
-        var computerChoice = getComputerChoice();
-        playRound(humanChoice, computerChoice);
-    }
+var rockButton = document.createElement('button');
+var paperButton = document.createElement('button');
+var scissorButton = document.createElement('button');
 
-    if(humanScore == computerScore){
-        console.log("Human and Computer tied the game!");
-    }
-    else if(humanScore > computerScore){
-        console.log("Human wins the game!");
-    }
-    else{
-        console.log("Computer wins the game!")
-    }
-}
+rockButton.textContent = "Rock!";
+paperButton.textContent = "Paper!";
+scissorButton.textContent = "Scissor!";
+
+rockButton.addEventListener("click", playRound("rock", getComputerChoice()));
+paperButton.addEventListener("click", playRound("paper", getComputerChoice()));
+scissorButton.addEventListener("click", playRound("scissors", getComputerChoice()));
+
+
+
+var buttonContainer = document.getElementById("button-container");
+
+buttonContainer.appendChild(rockButton);
+buttonContainer.appendChild(paperButton);
+buttonContainer.appendChild(scissorButton);
+
+
+
 
 var humanScore = 0;
 var computerScore = 0;
-playGame();
+
 
   
